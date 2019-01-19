@@ -1,2 +1,2 @@
 # Joel's repository
-This is where I will add the code that is made in class. These are my notes; remember that you should make your own!
+This is where I will add the code that is made during class, including the keys to the homework.
