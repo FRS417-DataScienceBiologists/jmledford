@@ -26,6 +26,10 @@ For this assignment we are going to work with a large dataset from the [United N
 fisheries <- readr::read_csv(file = "FAO_1950to2012_111914.csv") 
 ```
 
+```{r}
+spec(fisheries)
+```
+
 1. Do you see any potential problems with the column names? Does the error message now make more sense?  
 *Column names are duplicated so R manipulated them to unique names*
 ```{r}
@@ -62,6 +66,10 @@ fisheries <-
 fisheries
 ```
 
+```{r}
+names(fisheries)
+```
+
 4. Are these data tidy? Why or why not, and, how do you know?
 *No, the column names are values of the variable date.*  
 
@@ -95,7 +103,7 @@ fisheries_tidy <-
 fisheries_tidy
 ```
 
-9. You are a fisheries scientist studying cephalopod catch during 2008-2012. Identify the top five consumers (by country) of cephalopods (don't worry about species for now). Restrict the data frame only to our variables of interest.
+9. You are a fisheries scientist studying cephalopod catch during 2012. Identify the top five consumers (by country) of cephalopods (don't worry about species for now). Restrict the data frame only to our variables of interest.
 ```{r}
 fisheries_tidy %>% 
   select(country, spgroupname, year, catch) %>% 
@@ -103,6 +111,35 @@ fisheries_tidy %>%
     year==2012,
     spgroupname=="Squids, cuttlefishes, octopuses") %>%
   arrange(desc(catch))
+```
+
+```{r}
+fisheries_tidy %>% 
+  select(country, spgroupname, year, catch) %>% 
+  filter(
+    year==2008 | year==2009 | year==2010 | year==20011 | year==2012,
+    spgroupname=="Squids, cuttlefishes, octopuses") %>%
+  arrange((year))
+```
+
+```{r}
+fisheries_tidy %>% 
+   select(country, spgroupname, year, catch) %>% 
+  filter(
+    year>=2008 & year<=2012,
+    spgroupname=="Squids, cuttlefishes, octopuses") %>%
+  arrange((year))
+```
+
+```{r}
+fisheries_tidy %>% 
+  select(country, spgroupname, year, catch) %>% 
+  filter(
+    year>=2008 & year<=2012,
+    spgroupname=="Squids, cuttlefishes, octopuses") %>% 
+  group_by(country) %>% 
+  summarize(sumcatch=sum(catch, na.rm=TRUE)) %>%
+  arrange(desc(sumcatch))
 ```
 
 10. Let's be more specific. Who consumes the most `Common cuttlefish`? Store this as a new object `cuttle`.
