@@ -37,13 +37,94 @@ fisheries <- readr::read_csv(file = "FAO_1950to2012_111914.csv")
 ## Parsed with column specification:
 ## cols(
 ##   .default = col_character(),
-##   `Species (ISSCAAP group)` = col_integer(),
-##   `Fishing area (FAO major fishing area)` = col_integer()
+##   `Species (ISSCAAP group)` = col_double(),
+##   `Fishing area (FAO major fishing area)` = col_double()
 ## )
 ```
 
 ```
 ## See spec(...) for full column specifications.
+```
+
+
+```r
+spec(fisheries)
+```
+
+```
+## cols(
+##   `Country (Country)` = col_character(),
+##   `Species (ASFIS species)` = col_character(),
+##   `Species (ISSCAAP group)` = col_double(),
+##   `Species (ISSCAAP group)_1` = col_character(),
+##   `Species (ASFIS species)_1` = col_character(),
+##   `Species (ASFIS species)_2` = col_character(),
+##   `Fishing area (FAO major fishing area)` = col_double(),
+##   `Measure (Measure)` = col_character(),
+##   `1950` = col_character(),
+##   `1951` = col_character(),
+##   `1952` = col_character(),
+##   `1953` = col_character(),
+##   `1954` = col_character(),
+##   `1955` = col_character(),
+##   `1956` = col_character(),
+##   `1957` = col_character(),
+##   `1958` = col_character(),
+##   `1959` = col_character(),
+##   `1960` = col_character(),
+##   `1961` = col_character(),
+##   `1962` = col_character(),
+##   `1963` = col_character(),
+##   `1964` = col_character(),
+##   `1965` = col_character(),
+##   `1966` = col_character(),
+##   `1967` = col_character(),
+##   `1968` = col_character(),
+##   `1969` = col_character(),
+##   `1970` = col_character(),
+##   `1971` = col_character(),
+##   `1972` = col_character(),
+##   `1973` = col_character(),
+##   `1974` = col_character(),
+##   `1975` = col_character(),
+##   `1976` = col_character(),
+##   `1977` = col_character(),
+##   `1978` = col_character(),
+##   `1979` = col_character(),
+##   `1980` = col_character(),
+##   `1981` = col_character(),
+##   `1982` = col_character(),
+##   `1983` = col_character(),
+##   `1984` = col_character(),
+##   `1985` = col_character(),
+##   `1986` = col_character(),
+##   `1987` = col_character(),
+##   `1988` = col_character(),
+##   `1989` = col_character(),
+##   `1990` = col_character(),
+##   `1991` = col_character(),
+##   `1992` = col_character(),
+##   `1993` = col_character(),
+##   `1994` = col_character(),
+##   `1995` = col_character(),
+##   `1996` = col_character(),
+##   `1997` = col_character(),
+##   `1998` = col_character(),
+##   `1999` = col_character(),
+##   `2000` = col_character(),
+##   `2001` = col_character(),
+##   `2002` = col_character(),
+##   `2003` = col_character(),
+##   `2004` = col_character(),
+##   `2005` = col_character(),
+##   `2006` = col_character(),
+##   `2007` = col_character(),
+##   `2008` = col_character(),
+##   `2009` = col_character(),
+##   `2010` = col_character(),
+##   `2011` = col_character(),
+##   `2012` = col_character()
+## )
 ```
 
 1. Do you see any potential problems with the column names? Does the error message now make more sense?  
@@ -236,7 +317,7 @@ fisheries
 ```
 ## # A tibble: 17,692 x 71
 ##    country commname spgroup spgroupname spcode sciname region unit  X1950
-##    <chr>   <chr>      <int> <chr>       <chr>  <chr>    <int> <chr> <chr>
+##    <chr>   <chr>      <dbl> <chr>       <chr>  <chr>    <dbl> <chr> <chr>
 ##  1 Albania Angelsh…      38 Sharks, ra… 10903… Squati…     37 Quan… ...  
 ##  2 Albania Atlanti…      36 Tunas, bon… 17501… Sarda …     37 Quan… ...  
 ##  3 Albania Barracu…      37 Miscellane… 17710… Sphyra…     37 Quan… ...  
@@ -247,7 +328,7 @@ fisheries
 ##  8 Albania Caramot…      45 Shrimps, p… 22801… Penaeu…     37 Quan… ...  
 ##  9 Albania Catshar…      38 Sharks, ra… 10801… Scylio…     37 Quan… ...  
 ## 10 Albania Common …      57 Squids, cu… 32102… Sepia …     37 Quan… ...  
-## # ... with 17,682 more rows, and 62 more variables: X1951 <chr>,
+## # … with 17,682 more rows, and 62 more variables: X1951 <chr>,
 ## #   X1952 <chr>, X1953 <chr>, X1954 <chr>, X1955 <chr>, X1956 <chr>,
 ## #   X1957 <chr>, X1958 <chr>, X1959 <chr>, X1960 <chr>, X1961 <chr>,
 ## #   X1962 <chr>, X1963 <chr>, X1964 <chr>, X1965 <chr>, X1966 <chr>,
@@ -261,6 +342,29 @@ fisheries
 ## #   X2002 <chr>, X2003 <chr>, X2004 <chr>, X2005 <chr>, X2006 <chr>,
 ## #   X2007 <chr>, X2008 <chr>, X2009 <chr>, X2010 <chr>, X2011 <chr>,
 ## #   X2012 <chr>
+```
+
+
+```r
+names(fisheries)
+```
+
+```
+##  [1] "country"     "commname"    "spgroup"     "spgroupname" "spcode"     
+##  [6] "sciname"     "region"      "unit"        "X1950"       "X1951"      
+## [11] "X1952"       "X1953"       "X1954"       "X1955"       "X1956"      
+## [16] "X1957"       "X1958"       "X1959"       "X1960"       "X1961"      
+## [21] "X1962"       "X1963"       "X1964"       "X1965"       "X1966"      
+## [26] "X1967"       "X1968"       "X1969"       "X1970"       "X1971"      
+## [31] "X1972"       "X1973"       "X1974"       "X1975"       "X1976"      
+## [36] "X1977"       "X1978"       "X1979"       "X1980"       "X1981"      
+## [41] "X1982"       "X1983"       "X1984"       "X1985"       "X1986"      
+## [46] "X1987"       "X1988"       "X1989"       "X1990"       "X1991"      
+## [51] "X1992"       "X1993"       "X1994"       "X1995"       "X1996"      
+## [56] "X1997"       "X1998"       "X1999"       "X2000"       "X2001"      
+## [61] "X2002"       "X2003"       "X2004"       "X2005"       "X2006"      
+## [66] "X2007"       "X2008"       "X2009"       "X2010"       "X2011"      
+## [71] "X2012"
 ```
 
 4. Are these data tidy? Why or why not, and, how do you know?
@@ -285,16 +389,16 @@ glimpse(fisheries_tidy)
 ```
 ## Observations: 1,114,596
 ## Variables: 10
-## $ country     <chr> "Albania", "Albania", "Albania", "Albania", "Alban...
-## $ commname    <chr> "Angelsharks, sand devils nei", "Atlantic bonito",...
-## $ spgroup     <int> 38, 36, 37, 45, 32, 37, 33, 45, 38, 57, 33, 57, 31...
-## $ spgroupname <chr> "Sharks, rays, chimaeras", "Tunas, bonitos, billfi...
-## $ spcode      <chr> "10903XXXXX", "1750100101", "17710001XX", "2280203...
-## $ sciname     <chr> "Squatinidae", "Sarda sarda", "Sphyraena spp", "Ar...
-## $ region      <int> 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37...
-## $ unit        <chr> "Quantity (tonnes)", "Quantity (tonnes)", "Quantit...
-## $ year        <chr> "X1950", "X1950", "X1950", "X1950", "X1950", "X195...
-## $ catch       <chr> "...", "...", "...", "...", "...", "...", "...", "...
+## $ country     <chr> "Albania", "Albania", "Albania", "Albania", "Albania…
+## $ commname    <chr> "Angelsharks, sand devils nei", "Atlantic bonito", "…
+## $ spgroup     <dbl> 38, 36, 37, 45, 32, 37, 33, 45, 38, 57, 33, 57, 31, …
+## $ spgroupname <chr> "Sharks, rays, chimaeras", "Tunas, bonitos, billfish…
+## $ spcode      <chr> "10903XXXXX", "1750100101", "17710001XX", "228020310…
+## $ sciname     <chr> "Squatinidae", "Sarda sarda", "Sphyraena spp", "Aris…
+## $ region      <dbl> 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, …
+## $ unit        <chr> "Quantity (tonnes)", "Quantity (tonnes)", "Quantity …
+## $ year        <chr> "X1950", "X1950", "X1950", "X1950", "X1950", "X1950"…
+## $ catch       <chr> "...", "...", "...", "...", "...", "...", "...", "..…
 ```
 
 7. From question 6 you should see that there are a lot of entries that are missing. In R, these are referred to as NA's but they can be coded in different ways by the scientists in a given study. In order to make the data tidy, we need to deal with them. As a preview to our next lab, run the following code. It removes the 'X' from the years and changes the `catch` column from a character into a numeric. This forces the blank entries to become NAs. The error "NAs introduced by coercion" indicates their replacement.
@@ -323,7 +427,7 @@ fisheries_tidy
 ```
 ## # A tibble: 1,114,596 x 10
 ##    country commname spgroup spgroupname spcode sciname region unit   year
-##    <chr>   <chr>      <int> <chr>       <chr>  <chr>    <int> <chr> <dbl>
+##    <chr>   <chr>      <dbl> <chr>       <chr>  <chr>    <dbl> <chr> <dbl>
 ##  1 Albania Angelsh…      38 Sharks, ra… 10903… Squati…     37 Quan…  1950
 ##  2 Albania Atlanti…      36 Tunas, bon… 17501… Sarda …     37 Quan…  1950
 ##  3 Albania Barracu…      37 Miscellane… 17710… Sphyra…     37 Quan…  1950
@@ -334,10 +438,10 @@ fisheries_tidy
 ##  8 Albania Caramot…      45 Shrimps, p… 22801… Penaeu…     37 Quan…  1950
 ##  9 Albania Catshar…      38 Sharks, ra… 10801… Scylio…     37 Quan…  1950
 ## 10 Albania Common …      57 Squids, cu… 32102… Sepia …     37 Quan…  1950
-## # ... with 1,114,586 more rows, and 1 more variable: catch <dbl>
+## # … with 1,114,586 more rows, and 1 more variable: catch <dbl>
 ```
 
-9. You are a fisheries scientist studying cephalopod catch during 2008-2012. Identify the top five consumers (by country) of cephalopods (don't worry about species for now). Restrict the data frame only to our variables of interest.
+9. You are a fisheries scientist studying cephalopod catch during 2012. Identify the top five consumers (by country) of cephalopods (don't worry about species for now). Restrict the data frame only to our variables of interest.
 
 ```r
 fisheries_tidy %>% 
@@ -362,7 +466,90 @@ fisheries_tidy %>%
 ##  8 Argentina                Squids, cuttlefishes, octopuses  2012  94984
 ##  9 India                    Squids, cuttlefishes, octopuses  2012  82456
 ## 10 China                    Squids, cuttlefishes, octopuses  2012  78000
-## # ... with 735 more rows
+## # … with 735 more rows
+```
+
+
+```r
+fisheries_tidy %>% 
+  select(country, spgroupname, year, catch) %>% 
+  filter(
+    year==2008 | year==2009 | year==2010 | year==20011 | year==2012,
+    spgroupname=="Squids, cuttlefishes, octopuses") %>%
+  arrange((year))
+```
+
+```
+## # A tibble: 2,980 x 4
+##    country        spgroupname                      year catch
+##    <chr>          <chr>                           <dbl> <dbl>
+##  1 Albania        Squids, cuttlefishes, octopuses  2008    62
+##  2 Albania        Squids, cuttlefishes, octopuses  2008    82
+##  3 Albania        Squids, cuttlefishes, octopuses  2008   107
+##  4 Algeria        Squids, cuttlefishes, octopuses  2008    29
+##  5 Algeria        Squids, cuttlefishes, octopuses  2008   449
+##  6 Algeria        Squids, cuttlefishes, octopuses  2008   236
+##  7 Algeria        Squids, cuttlefishes, octopuses  2008   895
+##  8 American Samoa Squids, cuttlefishes, octopuses  2008     1
+##  9 Angola         Squids, cuttlefishes, octopuses  2008    NA
+## 10 Angola         Squids, cuttlefishes, octopuses  2008    NA
+## # … with 2,970 more rows
+```
+
+
+```r
+fisheries_tidy %>% 
+   select(country, spgroupname, year, catch) %>% 
+  filter(
+    year>=2008 & year<=2012,
+    spgroupname=="Squids, cuttlefishes, octopuses") %>%
+  arrange((year))
+```
+
+```
+## # A tibble: 3,725 x 4
+##    country        spgroupname                      year catch
+##    <chr>          <chr>                           <dbl> <dbl>
+##  1 Albania        Squids, cuttlefishes, octopuses  2008    62
+##  2 Albania        Squids, cuttlefishes, octopuses  2008    82
+##  3 Albania        Squids, cuttlefishes, octopuses  2008   107
+##  4 Algeria        Squids, cuttlefishes, octopuses  2008    29
+##  5 Algeria        Squids, cuttlefishes, octopuses  2008   449
+##  6 Algeria        Squids, cuttlefishes, octopuses  2008   236
+##  7 Algeria        Squids, cuttlefishes, octopuses  2008   895
+##  8 American Samoa Squids, cuttlefishes, octopuses  2008     1
+##  9 Angola         Squids, cuttlefishes, octopuses  2008    NA
+## 10 Angola         Squids, cuttlefishes, octopuses  2008    NA
+## # … with 3,715 more rows
+```
+
+
+```r
+fisheries_tidy %>% 
+  select(country, spgroupname, year, catch) %>% 
+  filter(
+    year>=2008 & year<=2012,
+    spgroupname=="Squids, cuttlefishes, octopuses") %>% 
+  group_by(country) %>% 
+  summarize(sumcatch=sum(catch, na.rm=TRUE)) %>%
+  arrange(desc(sumcatch))
+```
+
+```
+## # A tibble: 139 x 2
+##    country                  sumcatch
+##    <chr>                       <dbl>
+##  1 China                     3401977
+##  2 Peru                      1356792
+##  3 Japan                     1135840
+##  4 Korea, Republic of         879448
+##  5 Chile                      516352
+##  6 Indonesia                  503807
+##  7 United States of America   416297
+##  8 Taiwan Province of China   412536
+##  9 Thailand                   371859
+## 10 India                      308270
+## # … with 129 more rows
 ```
 
 10. Let's be more specific. Who consumes the most `Common cuttlefish`? Store this as a new object `cuttle`.
@@ -391,7 +578,7 @@ cuttle
 ##  8 France  Common cuttlefish Sepia officinalis  2012    94
 ##  9 Cyprus  Common cuttlefish Sepia officinalis  2012    24
 ## 10 Malta   Common cuttlefish Sepia officinalis  2012    24
-## # ... with 11 more rows
+## # … with 11 more rows
 ```
 
 ## Push your final code to [GitHub](https://github.com/FRS417-DataScienceBiologists)

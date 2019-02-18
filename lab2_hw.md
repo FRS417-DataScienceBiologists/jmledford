@@ -18,18 +18,18 @@ library("tidyverse")
 ```
 
 ```
-## ── Attaching packages ───────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+## ── Attaching packages ─────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
 ```
 
 ```
-## ✔ ggplot2 3.1.0     ✔ purrr   0.2.5
-## ✔ tibble  1.4.2     ✔ dplyr   0.7.8
+## ✔ ggplot2 3.1.0     ✔ purrr   0.3.0
+## ✔ tibble  2.0.1     ✔ dplyr   0.7.8
 ## ✔ tidyr   0.8.2     ✔ stringr 1.3.1
-## ✔ readr   1.1.1     ✔ forcats 0.3.0
+## ✔ readr   1.3.1     ✔ forcats 0.3.0
 ```
 
 ```
-## ── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ── Conflicts ────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ```
@@ -55,7 +55,7 @@ msleep
 ##  8 Vesp… Calo… <NA>  Rode… <NA>                 7        NA        NA    
 ##  9 Dog   Canis carni Carn… domesticated        10.1       2.9       0.333
 ## 10 Roe … Capr… herbi Arti… lc                   3        NA        NA    
-## # ... with 73 more rows, and 3 more variables: awake <dbl>, brainwt <dbl>,
+## # … with 73 more rows, and 3 more variables: awake <dbl>, brainwt <dbl>,
 ## #   bodywt <dbl>
 ```
 
@@ -87,17 +87,17 @@ glimpse(msleep)
 ```
 ## Observations: 83
 ## Variables: 11
-## $ name         <chr> "Cheetah", "Owl monkey", "Mountain beaver", "Grea...
-## $ genus        <chr> "Acinonyx", "Aotus", "Aplodontia", "Blarina", "Bo...
-## $ vore         <chr> "carni", "omni", "herbi", "omni", "herbi", "herbi...
-## $ order        <chr> "Carnivora", "Primates", "Rodentia", "Soricomorph...
-## $ conservation <chr> "lc", NA, "nt", "lc", "domesticated", NA, "vu", N...
-## $ sleep_total  <dbl> 12.1, 17.0, 14.4, 14.9, 4.0, 14.4, 8.7, 7.0, 10.1...
-## $ sleep_rem    <dbl> NA, 1.8, 2.4, 2.3, 0.7, 2.2, 1.4, NA, 2.9, NA, 0....
-## $ sleep_cycle  <dbl> NA, NA, NA, 0.1333333, 0.6666667, 0.7666667, 0.38...
-## $ awake        <dbl> 11.9, 7.0, 9.6, 9.1, 20.0, 9.6, 15.3, 17.0, 13.9,...
-## $ brainwt      <dbl> NA, 0.01550, NA, 0.00029, 0.42300, NA, NA, NA, 0....
-## $ bodywt       <dbl> 50.000, 0.480, 1.350, 0.019, 600.000, 3.850, 20.4...
+## $ name         <chr> "Cheetah", "Owl monkey", "Mountain beaver", "Greate…
+## $ genus        <chr> "Acinonyx", "Aotus", "Aplodontia", "Blarina", "Bos"…
+## $ vore         <chr> "carni", "omni", "herbi", "omni", "herbi", "herbi",…
+## $ order        <chr> "Carnivora", "Primates", "Rodentia", "Soricomorpha"…
+## $ conservation <chr> "lc", NA, "nt", "lc", "domesticated", NA, "vu", NA,…
+## $ sleep_total  <dbl> 12.1, 17.0, 14.4, 14.9, 4.0, 14.4, 8.7, 7.0, 10.1, …
+## $ sleep_rem    <dbl> NA, 1.8, 2.4, 2.3, 0.7, 2.2, 1.4, NA, 2.9, NA, 0.6,…
+## $ sleep_cycle  <dbl> NA, NA, NA, 0.1333333, 0.6666667, 0.7666667, 0.3833…
+## $ awake        <dbl> 11.9, 7.0, 9.6, 9.1, 20.0, 9.6, 15.3, 17.0, 13.9, 2…
+## $ brainwt      <dbl> NA, 0.01550, NA, 0.00029, 0.42300, NA, NA, NA, 0.07…
+## $ bodywt       <dbl> 50.000, 0.480, 1.350, 0.019, 600.000, 3.850, 20.490…
 ```
 
 
@@ -124,7 +124,7 @@ msleep %>%
 ##  8 Donkey               Equus           187 
 ##  9 Bottle-nosed dolphin Tursiops        173.
 ## 10 Tiger                Panthera        163.
-## # ... with 73 more rows
+## # … with 73 more rows
 ```
 
 
@@ -175,7 +175,7 @@ small
 ##  8 Owl monkey                Aotus         0.48         17  
 ##  9 Chinchilla                Chinchilla    0.42         12.5
 ## 10 Thick-tailed opposum      Lutreolina    0.37         19.4
-## # ... with 26 more rows
+## # … with 26 more rows
 ```
 
 
