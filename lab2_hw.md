@@ -65,8 +65,6 @@ msleep
 ?msleep
 ```
 
-
-
 2. Provide some summary information about the data to get you started; feel free to use the functions that you find most helpful.
 
 ```r
@@ -100,8 +98,6 @@ glimpse(msleep)
 ## $ bodywt       <dbl> 50.000, 0.480, 1.350, 0.019, 600.000, 3.850, 20.490…
 ```
 
-
-
 3. Make a new data frame focused on body weight, but be sure to indicate the common name and genus of each mammal. Sort the data in descending order by body weight.
 
 ```r
@@ -126,8 +122,6 @@ msleep %>%
 ## 10 Tiger                Panthera        163.
 ## # … with 73 more rows
 ```
-
-
 
 4. We are interested in two groups; small and large mammals. Let's define small as less than or equal to 1kg body weight and large as greater than or equal to 200kg body weight. For our study, we are interested in body weight and sleep total Make two new dataframes (large and small) based on these parameters. Sort the data in descending order by body weight.
 
@@ -178,9 +172,6 @@ small
 ## # … with 26 more rows
 ```
 
-
-
-
 5. Let's try to figure out if large mammals sleep, on average, longer than small mammals. What is the average sleep duration for large mammals as we have defined them?
 
 ```r
@@ -201,7 +192,6 @@ mean(small$sleep_total)
 ## [1] 12.65833
 ```
 
-
 7. Which animals sleep at least 18 hours per day? Be sure to show the name, genus, order, and sleep total. Sort by order and sleep total.
 
 ```r
@@ -221,6 +211,5 @@ msleep %>%
 ## 4 North American Opossum Didelphis  Didelphimorphia        18  
 ## 5 Thick-tailed opposum   Lutreolina Didelphimorphia        19.4
 ```
-
 
 ## Push your final code to [GitHub](https://github.com/FRS417-DataScienceBiologists)

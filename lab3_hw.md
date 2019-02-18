@@ -23,7 +23,8 @@ For this assignment we are going to work with a large dataset from the [United N
 
 
 ```r
-fisheries <- readr::read_csv(file = "FAO_1950to2012_111914.csv") 
+fisheries <- 
+  readr::read_csv(file = "data/FAO_1950to2012_111914.csv") 
 ```
 
 ```

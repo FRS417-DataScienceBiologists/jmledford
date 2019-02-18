@@ -199,7 +199,8 @@ $(document).ready(function () {
 <h2>Load the libraries</h2>
 <pre class="r"><code>library(tidyverse)</code></pre>
 <p>For this assignment we are going to work with a large dataset from the <a href="http://www.fao.org/about/en/">United Nations Food and Agriculture Organization</a> on world fisheries. The data are messy, so for this assignment I am going to provide some help. The code I use will likely be useful in the future so keep it handy. First, load the data. <strong>Read</strong> the error message.</p>
-<pre class="r"><code>fisheries &lt;- readr::read_csv(file = &quot;FAO_1950to2012_111914.csv&quot;) </code></pre>
+<pre class="r"><code>fisheries &lt;- 
+  readr::read_csv(file = &quot;data/FAO_1950to2012_111914.csv&quot;) </code></pre>
 <pre><code>## Warning: Duplicated column names deduplicated: 'Species (ISSCAAP group)'
 ## =&gt; 'Species (ISSCAAP group)_1' [4], 'Species (ASFIS species)' =&gt; 'Species
 ## (ASFIS species)_1' [5], 'Species (ASFIS species)' =&gt; 'Species (ASFIS

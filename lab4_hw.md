@@ -24,7 +24,8 @@ Aren't mammals fun? Let's load up some more mammal data. This will be life histo
 
 
 ```r
-life_history <- readr::read_csv("mammal_lifehistories_v2.csv")
+life_history <- 
+  readr::read_csv("data/mammal_lifehistories_v2.csv")
 ```
 
 ```

@@ -26,7 +26,7 @@ Let's revisit the mammal life history data to practice our `ggplot` skills. Some
 
 ```r
 life_history <- 
-  readr::read_csv(file = "mammal_lifehistories_v2.csv")
+  readr::read_csv(file = "data/mammal_lifehistories_v2.csv")
 ```
 
 ```
