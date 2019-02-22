@@ -77,7 +77,7 @@ life_history %>%
   geom_point()
 ```
 
-7. You should notice that because of the outliers in newborn mass, we need to make some changes. We didn't talk about this in lab, but you can use `scale_x_log10()` as a layer to correct for this issue. This will log transform the y-axis values.
+7. You should notice that because of the outliers in newborn mass, we need to make some changes. We didn't talk about this in lab, but you can use `scale_x_log10()` as a layer to correct for this issue. This will log transform the x-axis values.
 ```{r}
 life_history %>%
   ggplot(aes(x=newborn, y=gestation))+
