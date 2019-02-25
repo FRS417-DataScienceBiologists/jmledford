@@ -4,6 +4,7 @@ author: "Joel Ledford"
 date: "Winter 2019"
 output:
   html_document:
+    fig_caption: yes
     keep_md: yes
     theme: spacelab
 ---

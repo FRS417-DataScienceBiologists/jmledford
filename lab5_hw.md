@@ -4,6 +4,7 @@ author: "Joel Ledford"
 date: "Winter 2019"
 output:
   html_document:
+    fig_caption: yes
     keep_md: yes
     theme: spacelab
 ---
@@ -181,7 +182,7 @@ life_history %>%
 
 ![](lab5_hw_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
-7. You should notice that because of the outliers in newborn mass, we need to make some changes. We didn't talk about this in lab, but you can use `scale_x_log10()` as a layer to correct for this issue. This will log transform the y-axis values.
+7. You should notice that because of the outliers in newborn mass, we need to make some changes. We didn't talk about this in lab, but you can use `scale_x_log10()` as a layer to correct for this issue. This will log transform the x-axis values.
 
 ```r
 life_history %>%

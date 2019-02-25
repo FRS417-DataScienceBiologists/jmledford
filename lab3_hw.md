@@ -4,6 +4,7 @@ author: "Joel Ledford"
 date: "Winter 2019"
 output:
   html_document:
+    fig_caption: yes
     keep_md: yes
     theme: spacelab
 ---
@@ -414,8 +415,7 @@ fisheries_tidy <-
 ```
 
 ```
-## Warning in evalq(as.numeric(str_replace(catch, c(" F", "...", "-"),
-## replacement = "")), : NAs introduced by coercion
+## Warning: NAs introduced by coercion
 ```
 
 8. Are the data tidy? Why?  

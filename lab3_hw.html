@@ -545,8 +545,7 @@ fisheries</code></pre>
     year= as.numeric(str_replace(year, 'X', '')), #remove the X from year
     catch= as.numeric(str_replace(catch, c(' F','...','-'), replacement = '')) #replace character strings with NA
     )</code></pre>
-<pre><code>## Warning in evalq(as.numeric(str_replace(catch, c(&quot; F&quot;, &quot;...&quot;, &quot;-&quot;),
-## replacement = &quot;&quot;)), : NAs introduced by coercion</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
 <ol start="8" style="list-style-type: decimal">
 <li>Are the data tidy? Why?<br />
 <em>The dates are organized into a new column called <code>year</code> and each observation has its own row.</em></li>
